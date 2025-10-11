@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Frames Using Iframe</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        iframe {
+            width: 100%;
+            border: 1px solid #000;
+            height: 250px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- First frame: Image -->
+    <iframe srcdoc='
+        <h2 align="center">Image Frame</h2>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/PNG_transparency_demonstration_1.png/200px-PNG_transparency_demonstration_1.png" 
+             alt="Sample Image" style="display:block; margin:auto;">
+    '></iframe>
+
+    <!-- Second frame: Paragraph -->
+    <iframe srcdoc='
+        <h2 align="center">Paragraph Frame</h2>
+        <p>This is a paragraph displayed in the second frame. Frames allow you to divide the page into multiple sections.</p>
+    '></iframe>
+
+    <!-- Third frame: Hyperlink -->
+    <iframe srcdoc='
+        <h2 align="center">Hyperlink Frame</h2>
+        <a href="https://www.example.com" target="_blank">Visit Example.com</a>
+    '></iframe>
+
+</body>
+</html>
