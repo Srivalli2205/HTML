@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    <form action="#" method="post">
+        <table border="1" cellpadding="10" cellspacing="0">
+            <!-- Name -->
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" name="name" required></td>
+            </tr>
+            <!-- Email -->
+            <tr>
+                <td>Email:</td>
+                <td><input type="email" name="email" required></td>
+            </tr>
+            <!-- Password -->
+            <tr>
+                <td>Password:</td>
+                <td><input type="password" name="password" required></td>
+            </tr>
+            <!-- Mobile Number -->
+            <tr>
+                <td>Mobile Number:</td>
+                <td><input type="tel" name="mobile" required></td>
+            </tr>
+            <!-- Age -->
+            <tr>
+                <td>Age:</td>
+                <td><input type="number" name="age" min="1" max="100" required></td>
+            </tr>
+            <!-- Date of Birth -->
+            <tr>
+                <td>Date of Birth:</td>
+                <td><input type="date" name="dob" required></td>
+            </tr>
+            <!-- Gender -->
+            <tr>
+                <td>Gender:</td>
+                <td>
+                    <input type="radio" name="gender" value="Male" required> Male
+                    <input type="radio" name="gender" value="Female"> Female
+                    <input type="radio" name="gender" value="Other"> Other
+                </td>
+            </tr>
+            <!-- Hobbies -->
+            <tr>
+                <td>Hobbies:</td>
+                <td>
+                    <input type="checkbox" name="hobbies" value="Reading"> Reading
+                    <input type="checkbox" name="hobbies" value="Traveling"> Traveling
+                    <input type="checkbox" name="hobbies" value="Gaming"> Gaming
+                </td>
+            </tr>
+            <!-- Country -->
+            <tr>
+                <td>Country:</td>
+                <td>
+                    <select name="country" required>
+                        <option value="">Select Country</option>
+                        <option value="India">India</option>
+                        <option value="USA">USA</option>
+                        <option value="UK">UK</option>
+                        <option value="Australia">Australia</option>
+                    </select>
+                </td>
+            </tr>
+            <!-- Address -->
+            <tr>
+                <td>Address:</td>
+                <td>
+                    <textarea name="address" rows="4" cols="30" placeholder="Enter your address"></textarea>
+                </td>
+            </tr>
+            <!-- Submit and Reset Buttons -->
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Reset">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

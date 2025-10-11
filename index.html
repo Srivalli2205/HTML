@@ -1,0 +1,42 @@
+index.html: 
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<title>CSS Styles Demo</title> 
+  <!-- Internal CSS --> 
+  <style> 
+    h2 { 
+      color: darkgreen; 
+      font-family: Georgia, serif; 
+    } 
+    .internal-box { 
+      background-color: lightyellow; 
+      border: 2px solid orange; 
+      padding: 10px; 
+    } 
+  </style> 
+  <!-- External CSS --> 
+  <link rel="stylesheet" type="text/css" href="styles.css"> 
+</head> 
+<body> 
+  <h1 style="color: blue; font-size: 28px;">Inline Styled Heading (h1)</h1> 
+  <h2>Internal Styled Heading (h2)</h2> 
+  <div class="internal-box"> 
+    This box uses <strong>internal CSS</strong> for styling. 
+  </div> 
+  <br> 
+  <p class="external-paragraph"> 
+    This paragraph is styled using <strong>external CSS</strong>. 
+  </p> 
+</body> 
+</html> 
+styles.css: 
+/* External CSS styles */ 
+.external-paragraph { 
+  font-size: 18px; 
+  color: darkred; 
+  background-color: #f0f0f0; 
+  padding: 12px; 
+  border-left: 4px solid red; 
+}

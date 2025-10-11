@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Selector Types - Modified Demo</title>
+  <style>
+    /* I. Simple Selectors */
+    h1 { color: darkred; }                       /* Element selector */
+    #page-title { text-decoration: overline; }   /* ID selector */
+    .note { background-color: lightgreen; }     /* Class selector */
+    h2, p, li { font-family: 'Verdana', sans-serif; } /* Group selector */
+    * { margin: 8px; }                           /* Universal selector */
+    /* II. Combinator Selectors */
+    section p { color: navy; }                   /* Descendant selector */
+    ol > li { font-weight: bold; }              /* Child selector */
+    h3 + p { color: darkorange; }               /* Adjacent sibling */
+    h3 ~ p { font-style: oblique; }             /* General sibling */
+    /* III. Pseudo-class Selectors */
+    a:hover { color: green; text-decoration: underline; } 
+    li:first-child { color: maroon; }           
+    li:nth-child(3) { color: darkcyan; }        /* Changed nth-child */
+    /* IV. Pseudo-element Selectors */
+    p::first-line { font-weight: bold; color: darkblue; }  
+    p::before { content: "🌟 "; color: goldenrod; } 
+    p::after { content: " ✨"; color: purple; }  
+    /* V. Attribute Selectors */
+    input[type="email"] { border: 2px dashed red; }
+    a[href^="http"] { font-style: italic; }
+    input[placeholder*="email"] { background-color: #fff0f5; }
+  </style>
+</head>
+<body>
+  <!-- Simple Selectors -->
+  <h1 id="page-title">Modified CSS Selector Demo</h1>
+  <h2 class="note">This heading has a different highlight</h2>
+  <!-- Combinator Selectors -->
+  <section>
+    <p>This paragraph is inside a section (descendant).</p>
+  </section>
+  <ol>
+    <li>Apple</li>
+    <li>Banana</li>
+    <li>Cherry</li>
+  </ol>
+  <h3>Sibling Heading Example</h3>
+  <p>This paragraph is adjacent to h3.</p>
+  <p>This is another sibling paragraph.</p>
+  <!-- Pseudo-class -->
+  <a href="http://www.testsite.com">Go to Test Site</a>
+  <!-- Pseudo-element -->
+  <p>This paragraph shows pseudo-elements in action.</p>
+  <!-- Attribute Selectors -->
+  <form>
+    <input type="email" placeholder="Enter your email">
+    <input type="text" placeholder="Enter something else">
+  </form>
+</body>
+</html>
