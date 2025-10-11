@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fixed Tilted Background Example</title>
+  <style>
+    body {
+      margin: 0;
+      height: 200vh; 
+      font-family: Arial, sans-serif;
+    }
+    .background {
+      position: fixed;
+      top: 25%;     
+      left: 0;
+      width: 100%;
+      height: 220px; 
+      background-image: url('https://picsum.photos/id/1025/600/400');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      transform: rotate(-10deg); 
+      z-index: -1; 
+      opacity: 0.9;
+    }
+    .content {
+      padding: 60px;
+      font-size: 18px;
+      line-height: 1.6;
+    } 
+    .vtext {
+      writing-mode: vertical-rl;
+      color: darkblue;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="background"></div>
+  <div class="content">
+    <h1 class="vtext">Keep Scrolling</h1>
+    <p>This page demonstrates a fixed background image tilted slightly with CSS transform.</p>
+    <p>The background stays in place as you scroll down the content.</p>
+    <p>You can use scaleX(-1) to mirror the image, rotate() for tilt, and adjust transform-origin for smooth effects.</p>
+  </div>
+</body>
+</html>
