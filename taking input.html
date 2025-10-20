@@ -1,0 +1,106 @@
+<html> 
+  <head> 
+<style> 
+    table { 
+      border: 1; 
+      width: 50%; 
+      margin-top: 20px; 
+    } 
+    </style> 
+  </head> 
+<body> 
+  <h1>Different ways to take Input in Javascript</h1> 
+<form onsubmit="registrationFun(event)"> 
+  <label>Name</label><br> 
+  <input type="text" id="name" name="name" ><br> 
+  <label>Email Id: </label><br> 
+  <input type="email" id="email" name="email" ><br> 
+  <label>Date of Birth</label><br> 
+  <input type="date" id="dob" name="dob" ><br> 
+  <label>Address</label><br> 
+  <textarea id="address" name="address" ></textarea><br> 
+  <p>Gender:</p> 
+  <input type="radio" id="male" name="gender" value="male"> 
+  <label>Male</label><br> 
+  <input type="radio" id="female" name="gender" value="female"> 
+  <label>Female</label><br> 
+   <p>Languages Known:</p> 
+  <input type="checkbox" id="telugu" name="language" value="telugu"> 
+  <label>Telugu</label><br> 
+ <input type="checkbox" id="english" name="language" value="english"> 
+  <label>English</label><br> 
+ <input type="checkbox" id="hindi" name="language" value="hindi"> 
+  <label>Hindi</label><br> 
+ <input type="checkbox" id="tamil" name="language" value="tamil"> 
+  <label>Tamil</label><br> 
+  
+ 
+ 
+ 
+<input type="checkbox" id="spanish" name="language" value="spanish"> 
+  <label>Spanish</label><br> 
+ <p>Country:</p> 
+  <select id="country"> 
+ <option>Select</option> 
+    <option value="india">India</option> 
+    <option value="china">China</option> 
+    <option value="japan">Japan</option> 
+  </select><br><br> 
+<button>SignIn </button> 
+<button onclick="loginFun()" >LogIn</button> 
+</form> 
+<div id="result"></div> 
+<script>  
+    // Method 1: prompt() - Takes input using a dialog box 
+  function loginFun() 
+        { 
+            username=prompt("ENTER USERNAME"); 
+            password=prompt("ENTER PASSWORD"); 
+           alert("Login Successful" + "username :   " + username + "   password : " + 
+password); 
+        } 
+  <!-- Method 2: Input field + DOM access --> 
+function registrationFun(event) 
+    { 
+event.preventDefault(); 
+        name=document.getElementById("name").value;  
+         mail=document.getElementById("email").value; 
+ dob=document.getElementById("dob").value; 
+ address=document.getElementById("address").value; 
+ country=document.getElementById("country").value; 
+language=document.getElementsByName("language"); 
+selectedLanguage=[]; 
+   for ( i = 0; i < language.length; i++) 
+                 { 
+                if (language[i].checked) 
+                    { 
+                    selectedLanguage.push(language[i].value); 
+                     } 
+            } 
+   gender = document.getElementsByName("gender"); 
+                for ( i = 0; i < gender.length; i++) 
+                 { 
+                if (gender[i].checked) { 
+                    var selectedGender = gender[i].value; 
+                    break; 
+                
+ 
+ 
+} 
+} 
+`<strong>Your Registration Details:</strong> 
+<table> 
+<tr><td>Name</td> <td>${name}</td></tr> 
+<tr><td>Email</td> <td>${mail}</td></tr> 
+<tr><td>Date of Birth</td> <td>${dob}</td></tr> 
+<tr><td>Address</td> <td>${address}</td></tr> 
+<tr><td>Country</td> <td>${country}</td></tr> 
+<tr><td>Language</td> <td>${selectedLanguage}</td></tr> 
+<tr><td>Gender</td> <td>${selectedGender }</td></tr> 
+</table> 
+`;      
+document.getElementById("result").innerHTML=output; 
+} 
+</script> 
+</body> 
+</html> 

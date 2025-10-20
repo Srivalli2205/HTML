@@ -1,0 +1,25 @@
+script.js: 
+// script.js 
+function greetExternal() { 
+alert("Hello from External JavaScript!"); 
+} 
+jsdemo.html: 
+<!DOCTYPE html> 
+<html> 
+<head> 
+<title>Internal and External JavaScript</title> 
+<!-- Link to external JavaScript file --> 
+<script src="script.js"></script> 
+<!-- Internal JavaScript --> 
+<script> 
+function greetInternal() { 
+alert("Hello from Internal JavaScript!"); 
+} 
+</script> 
+</head> 
+<body> 
+<h1>Welcome to JavaScript Demo</h1> 
+<button onclick="greetInternal()">Click for Internal Script</button> 
+<button onclick="greetExternal()">Click for External Script</button> 
+</body> 
+</html>
