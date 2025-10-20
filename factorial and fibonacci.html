@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Factorial and Fibonacci Calculator</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    input, button { margin: 5px; padding: 8px; }
+    #result { margin-top: 15px; font-weight: bold; color: darkblue; }
+  </style>
+</head>
+<body>
+  <h2>Factorial & Fibonacci Calculator</h2>
+    <label>Enter a number:</label>
+  <input type="number" id="numInput" placeholder="Enter a number" />
+
+  <br>
+  <!-- Buttons -->
+  <button onclick="displayFactorial()">Factorial</button>
+  <button onclick="displayFibonacci()">Fibonacci</button>
+  <div id="result"></div>
+  <script>
+    // (a) Function to display factorial
+    function displayFactorial() {
+      const n = parseInt(document.getElementById('numInput').value);
+      if (isNaN(n) || n < 0) {
+        document.getElementById('result').innerText = "Please enter a non-negative integer.";
+        return;
+      }
+      let fact = 1;
+      for (let i = 1; i <= n; i++) {
+        fact *= i;
+      }
+      document.getElementById('result').innerText = `Factorial of ${n} is ${fact}`;
+    }
+    // (b) Function to display Fibonacci sequence
+    function displayFibonacci() {
+      const n = parseInt(document.getElementById('numInput').value);
+      if (isNaN(n) || n <= 0) {
+        document.getElementById('result').innerText = "Please enter a positive integer.";
+        return;
+      }
+      let fib="";
+      let a = 0, b = 1;
+      let c=a+b;
+      fib=a+" "+b+" ";
+      while(c<=n)
+      {
+        fib=fib+c+" ";
+        a=b;
+        b=c;
+        c=a+b;
+      }
+      document.getElementById('result').innerText = "Fibonacci upto "+n+" is: "+fib;
+    }
+  </script>
+
+</body>
+</html>
