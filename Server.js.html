@@ -1,0 +1,47 @@
+Server.js
+// Import the http module
+const http = require('http');
+// Create a server
+const server = http.createServer((req, res) => {
+  // Set response header
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  // Send data (response body)
+  res.write('Hello! This is data transferred over HTTP protocol.\n');
+  res.write('Node.js server is sending this response using http module.');
+  // End the response
+  res.end();
+});
+// Define port
+const PORT = 3000;
+// Start the server
+server.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}/`);
+});
+Client.js:
+const http = require('http');
+// Options for the HTTP request
+const options = {
+  hostname: 'localhost',
+  port: 3000,
+  path: '/',
+  method: 'GET'
+};
+// Send a request
+const req = http.request(options, (res) => {
+  console.log(`Status Code: ${res.statusCode}`);
+  // Collect data
+  res.on('data', (chunk) => {
+    console.log('Data received from server: ' + chunk);
+  });
+  // When the response ends
+  res.on('end', () => {
+    console.log('No more data from server.');
+  });
+});
+// Handle errors
+req.on('error', (error) => {
+  console.error(`Error: ${error.message}`);
+});
+// End the request
+req.end();
+
