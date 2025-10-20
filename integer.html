@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Compare Three Numbers</title>
+</head>
+<body>
+<h2>Compare Three Integers</h2>
+<button onclick="compareNumbers()">Enter and Compare</button>
+<script>
+  function compareNumbers() {
+    let num1 = parseInt(prompt("Enter first integer:"));
+    let num2 = parseInt(prompt("Enter second integer:"));
+    let num3 = parseInt(prompt("Enter third integer:"))
+    // Validate input
+    if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
+      alert("Please enter valid integers.");
+      return;
+    }
+    // Check if all numbers are equal
+    if (num1 === num2 && num2 === num3) {
+      alert("EQUAL NUMBERS");
+    } else {
+      // Find the largest number
+      let largest = Math.max(num1, num2, num3);
+      alert(largest + " LARGER NUMBER");
+    }
+  }
+</script>
+</body>
+</html>

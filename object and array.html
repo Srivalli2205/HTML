@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Looping Through Data</title>
+</head>
+<body>
+  <h2>Looping Through Object and Array</h2>
+  <button onclick="printData()">Display Data</button>
+ <p id="forInLoop"></p>
+  <p id="forEachLoop"></p>
+  <p id="forOfLoop"></p>
+  <script>
+   function printData() {
+      // Object example
+      let person = { name: "John", age: 25, city: "New York" };
+      // 1. Using for-in loop (for objects)
+      let forInResult = " ";
+      for (let key in person) {
+        forInResult += key + "=" + person[key] + " ";
+      }
+
+  document.getElementById("forInLoop").innerText= "For-In Loop (Object):" + forInResult;
+      // Array example
+      let fruits = ["Apple", "Banana", "Mango"];
+      // 2. Using forEach loop (for arrays)
+      let forEachResult = " ";
+      fruits.forEach(function(fruit, index) {
+        forEachResult += fruit + " ";
+      });
+   document.getElementById("forEachLoop").innerText="forEach Loop (Array): " +  forEachResult;
+      // 3. Using for-of loop (for arrays)
+      let forOfResult = " ";
+      for (let fruit of fruits) {
+        forOfResult += fruit + " ";
+      }
+  document.getElementById("forOfLoop").innerText = "For-Of Loop (Array):" + forOfResult;    }  </script>
+</body>
+</html>
